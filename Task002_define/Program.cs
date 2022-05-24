@@ -25,11 +25,18 @@ void searchInArray(int[] array)
 {
     Console.WriteLine("Input integer and press Enter: ");
     int searchNumber = int.Parse(Console.ReadLine());
+    int check =0;
     for (int j = 0; j < array.Length; j++)
         {
-            if(array[j] == searchNumber) Console.Write($"The number {searchNumber} is in the array on position {j}. ");;
+            if(array[j] == searchNumber)
+            {
+                Console.Write($"The number {searchNumber} is in the array on position {j}. ");          
+                check = 1;
+            }
         }
+    if(check == 0) Console.Write($"The number {searchNumber} is missing in the array. ");
 }
+
 
 int[] array = new int[10];
 
