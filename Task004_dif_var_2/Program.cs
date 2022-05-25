@@ -8,7 +8,7 @@ for (int i = 0; i < array.Length; i++)
 {
     array[i] = new Random().NextDouble() * 10;
     array[i] = Math.Round(array[i],2);
-    Console.Write($"{array[i]} ");;
+    Console.Write($"{array[i]} ");
 }
 
 int minPosition = 0;
@@ -16,7 +16,7 @@ int maxPosition = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if(array[i] < array[minPosition]) minPosition = i;
-        if(array[i] > array[maxPosition]) maxPosition = i;
+        else if(array[i] > array[maxPosition]) maxPosition = i;
     }
 
 Console.WriteLine();
