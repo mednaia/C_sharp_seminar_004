@@ -29,8 +29,7 @@ void SumOdd(int[] array)
     int sum = 0;
     for(int i = 0; i < count; i++)
     {
-        if (i == 1 || i%2 == 1)
-        sum = sum + array[i];
+        if (i == 1 || i%2 == 1) sum+=array[i];
     }
     Console.Write($"{sum} ");
 }
