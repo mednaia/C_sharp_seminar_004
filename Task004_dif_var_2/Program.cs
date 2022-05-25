@@ -1,17 +1,24 @@
 ﻿// В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
-int[]array = new int[8];
-for (int i = 0; i < array.Length; i++) array[i] = new Random().Next(-10,11);
-for(int i = 0; i < array.Length; i++) Console.Write($"{array[i]} ");
+Console.Write("Введите размер массива: ");
+
+int Number = int.Parse(Console.ReadLine() ?? "0");
+double[] array = new double[Number];
+
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = new Random().NextDouble() * 10;
+    array[i] = Math.Round(array[i],2);
+    Console.Write($"{array[i]} ");;
+}
+
 int minPosition = 0;
 int maxPosition = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if(array[i] < array[minPosition]) minPosition = i;
-    }
-for (int i = 0; i < array.Length; i++)
-    {
         if(array[i] > array[maxPosition]) maxPosition = i;
     }
+
 Console.WriteLine();
 Console.WriteLine($"The maximum elements = {array[maxPosition]} on position number {maxPosition}");
 Console.WriteLine($"The minimum elements = {array[minPosition]} on position number {minPosition}");
